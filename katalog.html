@@ -1,0 +1,59 @@
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <h1>Кондитьерская ***</h1>
+    <a href="glav.html">Главная</a>
+    <a href="katalog.html">  <div class="men2">
+      <nav id="nav">
+         <ul>
+           <li class="menu-item"><a href="katalog.html">КАТАЛОГ</a>
+             <ul class="submenu">
+               <li class="submenu-item"><a href="cake.html">ТОРТЫ</a></li>
+               <li class="submenu-item"><a href="vip.html">ВЫПЕЧКА</a></li>
+               </li>
+             </ul>
+         </ul>
+      </nav>
+  </div></a>
+  <a href="otziv.html">Отзывы</a>
+  <a href="vhod.html"><img src=»адрес картинки» ></a>
+
+  
+  
+  <script>
+    var NAV = document.getElementById('nav');
+      NAV.addEventListener('mouseover', function(e) {
+      var target = e.target;
+      var targetParent = target.closest('.menu-item');
+      if (targetParent) {
+        var subm = targetParent.getElementsByClassName('submenu')[0];
+        close();
+        if (subm) {
+          subm.style.display = 'block';
+        }
+      }
+    });
+    
+    function close() {
+      var s = document.getElementsByClassName('submenu'); NAV.addEventListener('mouseout', function (s){
+        var target = s.target;
+      var targetParent = target.closest('.menu-item');
+      if (targetParent) {
+        var subm = targetParent.getElementsByClassName('submenu')[0];
+        close();
+        if (subm) {
+          subm.style.display = 'none';
+      }
+    }
+  })};
+    </script>
+</body>
+
+
+<footer>
+    Кондитерская *** Наши партнер: Права защещены
+</footer>

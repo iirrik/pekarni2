@@ -1,0 +1,44 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+    // Оправка на почту/Обратная связь
+    var nodemailer = require('nodemailer');
+    var mailTransport = nodemailer.createTransport('SMTP',{
+     service: 'Gmail',
+     auth: {
+     user: 'credentials.gmail.user',
+     pass: 'credentials.gmail.password',
+     }
+    });
+    module.exports = {
+        cookieSecret: 'здесь находится ваш секрет cookie-файла',
+        gmail: {
+        user: 'ваше имя пользователя gmail',
+        password: 'ваш пароль gmail',
+        }
+       };
+       var mailTransport = nodemailer.createTransport('SMTP',{
+        host: 'smtp.meadowlarktravel.com',
+        secureConnection: true, // используйте SSL
+        port: 3000,
+        auth: {
+        user: 'credentials.meadowlarkSmtp.user',
+        pass: 'credentials.meadowlarkSmtp.password',
+        }
+       });
+       mailTransport.sendMail({
+        from: '"Meadowlark Travel" <info@meadowlarktravel.com>',
+        to: 'joecustomer@gmail.com',
+        subject: 'Ваш заказ',
+        text: 'Спасибо за заказ . ' +
+        'Мы ждем Вас с нетерпением!',
+       }, function(err){
+        if(err) console.error( 'Невозможно отправить письмо: ' + error );
+       });
+    
+</body>
+</html>
